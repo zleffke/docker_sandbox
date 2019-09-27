@@ -12,13 +12,13 @@ DEBIAN_FRONTEND=noninteractive apt dist-upgrade -y
 DEBIAN_FRONTEND=noninteractive apt install -y tzdata
 echo "America/New_York" > /etc/timezone
 DEBIAN_FRONTEND=noninteractive apt-get update -q
+DEBIAN_FRONTEND=noninteractive apt-get install apt-utils -y
 DEBIAN_FRONTEND=noninteractive apt-get install python-pip -y
 DEBIAN_FRONTEND=noninteractive apt-get install python-apt -y
-DEBIAN_FRONTEND=noninteractive apt-get install apt-utils -y
 DEBIAN_FRONTEND=noninteractive apt-get install python-virtualenv -y
 #stress-ng is optional, not required for a pybombs/gnuradio install, but useful for stress testing on various platforms.
 DEBIAN_FRONTEND=noninteractive apt-get install stress-ng -y
-DEBIAN_FRONTEND=noninteractive apt-get install openssh-server
+DEBIAN_FRONTEND=noninteractive apt-get install openssh-server -y
 
 # Start configuring SSH to be the main container process
 echo "---Configuring SSH---"
