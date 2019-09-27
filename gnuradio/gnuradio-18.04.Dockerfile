@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 LABEL maintainer=zleffke@vt.edu
 
 # Run the configuration script to setup the repositories and update/install other packages
-ADD configure.sh /root/configure.sh
+ADD config_gnuradio.sh /root/configure.sh
 RUN bash /root/configure.sh
 
 ENV NOTVISIBLE "in users profile"

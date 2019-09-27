@@ -22,7 +22,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install openssh-server
 
 # Start configuring SSH to be the main container process
 echo "---Configuring SSH---"
-mkdir /var/run/sshd
+mkdir -p /var/run/sshd
 #!!!!CHANGE YOUR PASSWORDS!!!!!!!
 echo 'root:gnuradio' | chpasswd
 #!!!!DON'T FORGET - CHANGE YOUR PASSWORDS!!!!
@@ -43,11 +43,12 @@ mkdir -p /gnuradio/captures   #location for recordings
 #setup and install pybombs
 echo "---Configuring PyBOMBS---"
 cd /gnuradio
-pip install --upgrade pip
+#pip install --upgrade pip  Causes weird crashes, don't know that we need most current version.
 pip install pybombs
 pybombs auto-config
 pybombs config makewidth 8 #change this to match available cores
 #configure prefix
+#in /gnuradio, so should hopefull
 pybombs prefix init /gnuradio/target -a target
 pybombs recipes add-defaults
 
