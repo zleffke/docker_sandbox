@@ -48,7 +48,7 @@ pybombs auto-config
 pybombs config makewidth 8 #change this to match available cores
 #configure prefix
 pybombs prefix init /gnuradio/target -a target
-pybombs -vvv -t target recipes add-defaults
+pybombs -vvv -p target recipes add-defaults
 
 #---HACK---
 #overwrite gnuradio.lwr from gnuradio37.lwr to install 3.7
