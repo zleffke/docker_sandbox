@@ -6,8 +6,16 @@ if [ -z "$1" ]; then
   exit -1
 fi
 
+if [ -d "./log" ]
+then
+    echo "Directory ./log Exists"
+else
+    echo "Directory ./log does not exist...creating"
+    mkdir log
+fi
+
 IMAGE_NAME=$1
-BUILD_LOG="build-"$IMAGE_NAME"_"$TIMESTAMP".log"
+BUILD_LOG="./log/build-"$IMAGE_NAME"_"$TIMESTAMP".log"
 echo "Building container:" $IMAGE_NAME
 echo "Logging To: " $BUILD_LOG
 
