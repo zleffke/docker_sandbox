@@ -54,7 +54,7 @@ pybombs -vvv -t target recipes add-defaults
 #overwrite gnuradio.lwr from gnuradio37.lwr to install 3.7
 #this should register the install as gnuradio
 #This for other OOTMs that depend on gnuradio
-mv /gnuradio/target/.pybombs/recipes/gr-recipes/gnuradio37.lwr /gnuradio/target/.pybombs/recipes/gr-recipes/gnuradio.lwr 
+mv /gnuradio/target/.pybombs/recipes/gr-recipes/gnuradio37.lwr /gnuradio/target/.pybombs/recipes/gr-recipes/gnuradio.lwr
 
 #install common dependencies, may not be comprehensive
 echo "---Installing Common Dependencies for PyBOMBS---"
@@ -84,6 +84,7 @@ pybombs -vvv -p target install gr-timing_utils
 pybombs -vvv -p target install gr-message_tools
 
 #Test gnuradio install
+echo "---Test GNU Radio Install---"
 source /gnuradio/target/setup_env.sh
 echo "Python interpreter: " $(which python)
 echo "Python version: " $(python --version)
