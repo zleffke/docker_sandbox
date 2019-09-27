@@ -9,10 +9,9 @@
 echo "---Configuring Ubuntu---"
 DEBIAN_FRONTEND=noninteractive apt update
 DEBIAN_FRONTEND=noninteractive apt dist-upgrade -y
+DEBIAN_FRONTEND=noninteractive apt-get install apt-utils -y
 DEBIAN_FRONTEND=noninteractive apt install -y tzdata
 echo "America/New_York" > /etc/timezone
-DEBIAN_FRONTEND=noninteractive apt-get update -q
-DEBIAN_FRONTEND=noninteractive apt-get install apt-utils -y
 DEBIAN_FRONTEND=noninteractive apt-get install python-pip -y
 DEBIAN_FRONTEND=noninteractive apt-get install python-apt -y
 DEBIAN_FRONTEND=noninteractive apt-get install python-virtualenv -y
