@@ -21,6 +21,3 @@ echo "Logging To: " $BUILD_LOG
 
 # Build the container
 docker build -t $IMAGE_NAME -f gnuradio-18.04.Dockerfile . >> $BUILD_LOG
-
-# Remove the temporary directories
-rm -rf tmp
