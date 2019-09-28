@@ -19,6 +19,12 @@ DEBIAN_FRONTEND=noninteractive apt-get install python-virtualenv -y
 DEBIAN_FRONTEND=noninteractive apt-get install stress-ng -y
 DEBIAN_FRONTEND=noninteractive apt-get install openssh-server -y
 
+#Other things you found out you want
+DEBIAN_FRONTEND=noninteractive apt-get install vim -y
+DEBIAN_FRONTEND=noninteractive apt-get install htop -y
+DEBIAN_FRONTEND=noninteractive apt-get install net-utils -y
+DEBIAN_FRONTEND=noninteractive apt-get install netcat -y
+
 # Start configuring SSH to be the main container process
 echo "---Configuring SSH---"
 mkdir -p /var/run/sshd
@@ -74,7 +80,7 @@ pybombs -vvv -p target install gnuradio #don't upgrade to 3.8 yet.
 
 #Install VCC specific Out of Tree Modules (OOTMs)
 echo "---Installing VCC OOTMs---"
-pybombs -vvv -t target recipes add gr-vtgs-recipes git+https://github.com/vt-gs/recipes.git
+pybombs -vvv -p target recipes add gr-vtgs git+https://github.com/vt-gs/recipes.git
 pybombs -vvv -p target install gr-kiss    #kiss / ax.25 processing blocks
 pybombs -vvv -p target install gr-sigmf   #for signal recording and playback
 pybombs -vvv -p target install gr-vcc     #Custom blocks for VCC mission.
